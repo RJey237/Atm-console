@@ -1,0 +1,74 @@
+<!-- <h2>invalid input</h2>
+<br>
+<form action="/menu/">
+    {% csrf_token %}
+    <input type="submit" value="Continue">
+</form> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invalid Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff4c4c;
+            color: white;
+            padding: 10px 0;
+        }
+        h2 {
+            color: #ff4c4c;
+        }
+        .content {
+            padding: 20px;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: left;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Invalid Input</h2>
+    </header>
+    <div class="content">
+        <form action="/menu/">
+            {% csrf_token %}
+            <input type="submit" value="Continue">
+        </form>
+
+    </div>
+</body>
+</html>
+
+

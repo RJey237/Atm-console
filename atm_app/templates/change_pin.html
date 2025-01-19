@@ -1,0 +1,97 @@
+<!-- <h2>Change Pin</h2>
+<p>For user: "{{ account }}"</p>
+<form action="/change_pin/" method="post">
+    {% csrf_token %}
+    <label for="old_pin">Enter Old Pin</label><br>
+    <input type="password" id="old_pin" name="old_pin" minlength="4" maxlength="4" pattern="[a-z0-9]{4}" title="Pin should only contain numbers and lowercase letters"><br>
+    <label for="new_pin">Enter New Pin</label><br>
+    <input type="password" id="new_pin" name="new_pin" minlength="4" maxlength="4" pattern="[a-z0-9]{4}" title="Pin should only contain numbers and lowercase letters"><br>
+    <br>
+    <input type="submit" name="back" value="back">
+    <input type="submit" name="change" value="Change">
+</form>
+{% if incorrect_pin %}
+<h2 class="invalid">Incorrect/Invalid Pin</h2>
+{% endif %}
+ -->
+
+
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Change Pin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .content {
+            padding: 20px;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: left;
+        }
+        label, input {
+            display: block;
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .invalid {
+            color: red;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Change Pin</h2>
+    </header>
+    <div class="content">
+        <p>For user: "{{ account }}"</p>
+        <form action="/change_pin/" method="post">
+            {% csrf_token %}
+            <label for="old_pin">Enter Old Pin</label>
+            <input type="password" id="old_pin" name="old_pin" minlength="4" maxlength="4" pattern="[a-z0-9]{4}" title="Pin should only contain numbers and lowercase letters">
+            <label for="new_pin">Enter New Pin</label>
+            <input type="password" id="new_pin" name="new_pin" minlength="4" maxlength="4" pattern="[a-z0-9]{4}" title="Pin should only contain numbers and lowercase letters">
+            <input type="submit" name="back" value="Back">
+            <input type="submit" name="change" value="Change">
+        </form>
+        {% if incorrect_pin %}
+        <h2 class="invalid">Incorrect/Invalid Pin</h2>
+        {% endif %}
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!-- <h2>Enter Credentials</h2>
+<form action="/" method="post">
+    {% csrf_token %}
+    <label for="account">Account</label><br>
+    <input type="text" id="account" name="account" maxlength="15" pattern="[A-Za-z0-9]+" title="Account should only contain numbers and letters" required><br>
+    <label for="pin">Pin</label><br>
+    <input type="password" id="pin" name="pin" minlength="4" maxlength="4" pattern="[a-z0-9]{4}" title="Pin should only contain numbers and lowercase letters" required><br>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+{% if incorrect_password %}
+<h2 class="invalid">Invalid Account or PIN</h2>
+{% elif invalid_input %}
+<h2 class="invalid">Failed Registration</h2>
+{% endif %} -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Credentials</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .content {
+            padding: 20px;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: left;
+        }
+        label, input {
+            display: block;
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .invalid {
+            color: red;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Enter Credentials</h2>
+    </header>
+    <div class="content">
+        <form action="/" method="post">
+            {% csrf_token %}
+            <label for="account">Account</label>
+            <input type="text" id="account" name="account" maxlength="15" pattern="[A-Za-z0-9]+" title="Account should only contain numbers and letters" required>
+            <label for="pin">Pin</label>
+            <input type="password" id="pin" name="pin" minlength="4" maxlength="4" pattern="[a-z0-9]{4}" title="Pin should only contain numbers and lowercase letters" required>
+            <input type="submit" value="Submit">
+        </form>
+        {% if incorrect_password %}
+        <h2 class="invalid">Invalid Account or PIN</h2>
+        {% elif invalid_input %}
+        <h2 class="invalid">Failed Registration</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,88 @@
+<!-- <h2>Menu</h2>
+<p>Welcome "{{ account }}"</p>
+<div class="money">Balance: ${{ balance }}</div>
+<form action="/menu/" method="post">
+    {% csrf_token %}
+    <button type="submit" name="type" value="withdraw">Withdraw</button>
+    <button type="submit" name="type" value="deposit">Deposit</button>
+    <button type="submit" name="type" value="change_pin">Change Pin</button> <br> <br>
+    <button type="submit" name="type" value="/">Exit</button>
+</form>
+
+ -->
+
+
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .content {
+            padding: 20px;
+        }
+        .money {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: left;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Menu</h2>
+    </header>
+    <div class="content">
+        <p>Welcome "{{ account }}"</p>
+        <div class="money">Balance: ${{ balance }}</div>
+        <form action="/menu/" method="post">
+            {% csrf_token %}
+            <button type="submit" name="type" value="withdraw">Withdraw</button>
+            <button type="submit" name="type" value="deposit">Deposit</button>
+            <button type="submit" name="type" value="change_pin">Change Pin</button>
+            <br><br>
+            <button type="submit" name="type" value="/">Exit</button>
+        </form>
+
+    </div>
+</body>
+</html>
